@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+.error-message {
+  margin-left: 10px;
+  color: red;
+}
+.custom-table th.table-header {
+  background-color: #24282a;
+  color: hsl(77, 23%, 94%);
+}
+.bg-cover {
+  background-image: url("assets/images/bg.jpg");
+  background-size: cover;
+}

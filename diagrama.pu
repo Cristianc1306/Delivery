@@ -1,0 +1,56 @@
+@startuml
+Pais <--"*" Provincia
+Provincia <--"*" Localidad
+Localidad "*"-"*" Cliente
+Cliente "1" <--> "*" DomicilioEntrega
+ArticulosPedido "*"-> Articulo
+Remito "*"-> DomicilioEntrega
+DomicilioEntrega "1" <--> "*" Pedido
+Remito <.."*" ArticulosPedido
+Pedido <--"*" ArticulosPedido
+Factura <.."*" ArticulosPedido
+Cliente <--"*" Factura
+
+class Pais{
+  -String nombre
+}
+class Provincia{
+  -String nombre
+}
+class Localidad{
+  -String nombre
+  -String cp
+}
+class Cliente{
+  -String razoSocial
+  -int cuit
+}
+class DomicilioEntrega{
+  -String calle
+  -int altura
+  -String pisoDpto
+}
+class Remito{
+  -Date fechaArmado
+  -boolean entregado
+}
+class Pedido{
+  -Date fecha
+  -String observaciones
+}
+class Factura{
+  -Date fechaEmision
+  -Date fechaPago
+}
+class ArticulosPedido{
+  -Float cantidad
+  -Float precio
+}
+class Articulo{
+  -String nombre
+  -String descripcion
+  -Float precio
+  -Float stock
+  -String unidadMedida
+}
+@enduml
